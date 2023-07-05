@@ -28,13 +28,14 @@ form{
     line-height: 3em;
 }
 input {
+    min-width: 20em;
     padding: 0 1em;
     background: #fff;
     border-radius: 4px;
 }
 button {
     margin: 0 0 0 1em;
-    padding: 0 1em;
+    padding: 0 2em;
     background: #fff;
     border-radius: 4px;
 }
