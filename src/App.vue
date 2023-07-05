@@ -1,22 +1,22 @@
 <script setup>
 import Search from './components/Search.vue'
 import Result from './components/Result.vue'
-
 import { ref } from 'vue';
 
 
 const result = ref([])
 
 function search(ISBN){
-    fetch("https://api.openbd.jp/v1/get?isbn=" + ISBN.value).then
-    ( r=> r.json().then(json => {
-        console.log(json);
-        if(json[0] != null){
-          result.value.unshift(json[0]);
-        } 
-    }),
-    r => console.log("通信失敗")
+  fetch("https://api.openbd.jp/v1/get?isbn=" + ISBN.value)
+    .then(
+        r => r.json().then(json => {
+          console.log(json);
+          if(json[0] != null){
+            result.value.unshift(json[0]);
+          } 
+        })
     )
+    .catch(r => console.log("通信失敗"))
 }
 
 </script>
